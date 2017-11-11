@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package com.watershed.sentiment.protos;
+
+// The sentiment service definition.
+service Sentiment {
+    // Sends computed sentiment back to the client
+    rpc GetSentiment (SentimentRequest) returns (SentimentReply) {}
+}
+
+// The request message containing the text to process.
+message SentimentRequest {
+    string text = 1;
+}
+
+// The response message containing sentiment score
+message SentimentReply {
+    string sentiment = 1;
+}
